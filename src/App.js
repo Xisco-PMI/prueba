@@ -13,6 +13,11 @@ function App() {
     return () => clearInterval(timerId);
   }, []);
 
+  const handleRefresh = () => {
+    setCurrentTime(new Date()); // Simula una actualización de contenido
+    // Aquí es donde en el futuro se podría llamar a una función para buscar noticias
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,6 +28,13 @@ function App() {
         <p>
           La fecha y hora actuales son: {currentTime.toLocaleString()}
         </p>
+        <button onClick={handleRefresh}>Actualizar Contenido</button>
+
+        <div style={{ marginTop: '20px' }}>
+          <h2>Últimas Noticias (Placeholder)</h2>
+          <p>Aquí se mostrarán las noticias cuando la funcionalidad de búsqueda esté disponible.</p>
+          {/* Aquí irían las viñetas de noticias */}
+        </div>
       </header>
     </div>
   );
